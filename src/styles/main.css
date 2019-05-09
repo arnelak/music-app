@@ -1,0 +1,57 @@
+*{
+  font-family: 'Abel', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+#player {
+  visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+#player.visible {
+  visibility: visible;
+}
+
+#player > h4 {
+  margin-top: 0;
+}
+
+.controls-wrapper {
+    display: flex;
+}
+
+.controls-wrapper img {
+  height: 85px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.control-button {
+  margin-right: 10px;
+}
+
+.details-page .background-img {
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+  top: 0;
+  max-height: 100vh;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.details-page .cover-img {
+  width: 200px;
+}
+
+.details-page .details-content {
+  display: flex;
+  padding: 20px;
+}

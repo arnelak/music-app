@@ -1,0 +1,155 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+.logo {
+  border-bottom: 1px solid #69696924;
+
+  h3 {
+    display: inline-block;
+    color: #696969;
+    font-family: 'Lobster', cursive;
+    margin-left: 30px;;
+  }
+  i {
+    color: #E91E63;
+    font-size: 25px;
+  }
+}
+body {
+  margin: 0;
+  background-color: #ffffff;
+}
+
+#player {
+  visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+.container {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,-0.88)!important;
+    width: 95%;
+    margin: auto;
+    #song-block {
+      display: inline-block;
+      ul {
+        list-style: none;
+
+
+        a {
+          text-decoration: none;
+          color: #696969;
+          font-size: 13px;
+        }
+      }
+    }
+
+    #sidebar {
+      position: relative;
+      height: 545px;
+      top: 0;
+      width: 20%;
+      padding-top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      background-color: #f5f5f5;
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          padding: 10px;
+          cursor: pointer;
+
+          a {
+            text-decoration: none;
+            color: #696969;
+            font-size: 13px;
+          }
+
+          i {
+            margin-right: 10px;
+            color: #E91E63;
+            font-size: 12px;
+          }
+
+          &:hover {
+            background-color: #E91E63;
+            i, a {
+              color: white;
+            }
+         }
+        }
+      }
+    }
+  }
+.main {
+  width: 100%;
+
+  .header {
+    color: #696969;
+    height: 61px;
+    padding-left: 40px;
+    display: flex;
+    border-bottom: 1px solid #69696924;
+    i {
+      margin-top: 23px;
+      font-size: 11px;
+      margin-right: 30px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 21px;
+    }
+  }
+
+}
+
+
+#player.visible {
+  visibility: visible;
+}
+
+#player > h4 {
+  margin-top: 0;
+}
+
+.controls-wrapper {
+    display: flex;
+}
+
+.controls-wrapper img {
+  height: 85px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.control-button {
+  margin-right: 10px;
+}
+
+.details-page .background-img {
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+  top: 0;
+  max-height: 100vh;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.details-page .cover-img {
+  width: 200px;
+}
+
+.details-page .details-content {
+  display: flex;
+  padding: 20px;
+}
