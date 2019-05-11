@@ -79,10 +79,16 @@ body {
     .main .header i {
       margin-top: 23px;
       font-size: 11px;
-      margin-right: 30px; }
-    .main .header p {
-      font-size: 14px;
-      margin-top: 21px; }
+      margin-right: 15px; }
+    .main .header #myText {
+      width: 25%;
+      border: none;
+      height: 30px;
+      margin-top: 12px;
+      transition: width .35s ease-in-out;
+      transition: width .35s ease-in-out; }
+    .main .header #myText:focus {
+      width: 35%; }
 
 #player.visible {
   visibility: visible; }
@@ -116,3 +122,18 @@ body {
 .details-page .details-content {
   display: flex;
   padding: 20px; }
+
+.bell {
+  margin-right: 15px;
+  margin-left: 45%; }
+  .bell #notification {
+    margin-top: 23px; }
+
+.userBlock {
+  border-left: 1px solid #69696924; }
+  .userBlock img {
+    border-radius: 50%;
+    height: 35px;
+    margin-left: 25px;
+    padding-bottom: 14px;
+    padding-top: 13px; }
