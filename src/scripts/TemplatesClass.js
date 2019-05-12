@@ -18,12 +18,18 @@ class TemplatesClass {
       events.addEventListenerOnPlayButton(song[0]);
     }
     else {
-      songBlockElement.innerHTML = this.getHomepage();
+
+      if(state && state.url && state.url === "/login") {
+        songBlockElement.innerHTML = this.getLoginPage();
+      }
+      else {
+        songBlockElement.innerHTML = this.getHomepage();
+      }
       /*
         ista stvar i ovdje, getHomepageTemplate vrati novi html sa onim linkovima
         i svaki put moramo ponovo da dodamo click evente na te linkove da bi radili bez reloada
       */
-      events.addClickOnLink();
+      //events.addClickOnLink();
     }
   }
 
@@ -37,7 +43,7 @@ class TemplatesClass {
       `);
     return template();
   }
-  
+
   getDetails = (song) => {
     const template = Handlebars.compile(`
       <div class="details-page">
@@ -54,6 +60,19 @@ class TemplatesClass {
       </div>
     `);
     return template(song);
+  };
+
+  getLoginPage = () => {
+    const template = Handlebars.compile(`
+      <div class="login-page">
+        <form id="login-form">
+          <input id="login-email" type="email" placeholder="Email" />
+          <input id="login-password" type="password" placeholder="Password" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    `);
+    return template();
   };
 
   getIconPause = () => {

@@ -27,6 +27,5 @@
 */
 window.onpopstate = history.onpushstate = function(event) {
     const songBlockElement = document.querySelector("#song-block");
-    
     templates.renderTemplate(event.state, songBlockElement);
 };

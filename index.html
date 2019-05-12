@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./src/styles/scss/style.scss" />
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="stylesheet" href="./src/styles/css/style.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
   </head>
   <body>
     <div class="container">
@@ -24,6 +28,8 @@
           <li><i class="far fa-user"></i><a href="index.html">Artists</a></li>
           <li><i class="fas fa-compact-disc"></i><a href="index.html">Music Videos</a></li>
           <li><i class="fas fa-music"></i><a href="index.html">Radio</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><span id="logoutElement">Logout</span></li>
         </ul>
       </div>
       <div class="main">
@@ -58,6 +64,8 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./src/scripts/Firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script type="text/javascript" src="./assets/songs.js"></script>
     <script type="text/javascript" src="./src/scripts/TemplatesClass.js"></script>

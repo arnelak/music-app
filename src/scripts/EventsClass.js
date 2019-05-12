@@ -3,21 +3,21 @@ class EventsClass {
   constructor() {
     this.addClickOnLink();
     this.addClickOnControls();
+    this.onLoginSubmit();
+    this.onLogout();
   }
 
   addClickOnLink = () =>  {
-    const aElements = document.querySelectorAll("a");
+    $(document).on('click', 'a', function(event){
+      event.preventDefault();
 
-    aElements.forEach(function(element) {
-      element.addEventListener("click", function(event) {
-        event.preventDefault();
-        history.pushState({
-          songID: element.getAttribute('data-id'),
-        },
+      history.pushState({
+        songID: event.target.getAttribute('data-id'),
+        url: event.target.getAttribute('href'),
+      },
         null,
-        element.getAttribute('href'));
+        event.target.getAttribute('href'));
       });
-    });
   }
 
   addClickOnControls = () => {
@@ -32,6 +32,40 @@ class EventsClass {
       }
 
       this.changePlayerButton();
+    });
+  }
+
+  onLoginSubmit = () => {
+    $(document).on('submit', '#login-form', function(event){
+      event.preventDefault();
+      const email = document.querySelector("#login-email").value;
+      const password = document.querySelector("#login-password").value;
+
+      firebase.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((response) => {
+        history.pushState(
+          null,
+          null,
+          "/"
+        );
+      })
+      .catch((error) => {
+        console.log("ERR", error);
+      });
+    });
+  }
+
+  onLogout = () => {
+    document.querySelector("#logoutElement").addEventListener("click", () => {
+      firebase.auth()
+      .signOut()
+      .then(() => {
+        console.log("LOGOUT SUCCESS");
+      })
+      .catch((err) => {
+        console.log("LOGOUT FAILED", err);
+      });
     });
   }
 
