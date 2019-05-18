@@ -17,56 +17,87 @@
     <div class="container">
       <div id="sidebar">
         <div class="logo">
-          <h3>Music Corner</h3>
-          <i class="fab fa-napster"></i>
+          <a href="index.html">Music Corner<i class="fab fa-napster"></i></a>
         </div>
 
         <ul>
+          <p class="titles">Browse Music</p>
           <li><i class="fas fa-search"></i><a href="index.html">Discover</a></li>
           <li><i class="fas fa-headphones"></i><a href="index.html">Songs</a></li>
-          <li><i class="far fa-play-circle"></i><a href="index.html">Albums</a></li>
+          <li><i class="fas fa-play-circle"></i><a href="index.html">Albums</a></li>
           <li><i class="far fa-user"></i><a href="index.html">Artists</a></li>
           <li><i class="fas fa-compact-disc"></i><a href="index.html">Music Videos</a></li>
           <li><i class="fas fa-music"></i><a href="index.html">Radio</a></li>
           <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
           <li><span id="logoutElement">Logout</span></li>
+          <p class="titles">Your Music</p>
+          <li><i class="fas fa-heart"></i><a href="index.html">Favourite</a></li>
+          <li><i class="far fa-clock"></i><a href="index.html">Play History</a></li>
+          <li><i class="fas fa-download"></i><a href="index.html">Download Items</a></li>
+          <li><i class="fas fa-copy"></i><a href="index.html">Local Files</a></li>
         </ul>
       </div>
       <div class="main">
         <div class="header">
+          <div class="navBlock">
              <i class="fas fa-search"></i>
              <input id="myText" type="text" name="text" placeholder="Search Song, Album or Singer...">
-             <div class="bell">
-               <i id="notification" class="far fa-bell"></i>
-
-             </div>
+          </div>
+             <i id="notification" class="far fa-bell"></i>
              <div class="userBlock">
                  <img src="images/image.jpg">
              </div>
 
         </div>
-        <div id="song-block">
+        <h3>Recomended Albums</h3>
+        <div id="songList">
+
+          <div class="block1">
+            <img class="blockImage" src="https://freight.cargo.site/t/original/i/c842d1eb353838ef10c6b5f11fa27e47549604a59ec9f180791d0431b3ea209c/02_BONOBO-FIRST-FIRES-single.jpg" >
+          </div>
+          <div class="block2">
+            <img class="blockImage" src="https://img.discogs.com/7s2dUoQwO_QIorLghKxn56IYObk=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-689255-1322218106.jpeg.jpg">
+          </div>
+          <div class="block3">
+            <img class="blockImage" src="http://is5.mzstatic.com/image/thumb/Music18/v4/24/2e/d3/242ed380-9dde-4ea7-eb57-185971e3b0dd/source/100000x100000-999.jpg" >
+          </div>
+          <div class="block4">
+            <img class="blockImage" src="https://lamaster.es/wp-content/uploads/2019/02/ariana-grande-thank-you-next-cover.jpg" >
+          </div>
+        </div>
+          <div id="song-block">
           <ul>
             <li><a href="/song-1" data-id="1">Song 1</a></li>
             <li><a href="/song-2" data-id="2">Song 2</a></li>
             <li><a href="/song-3" data-id="3">Song 3</a></li>
+            <li><a href="/song-4" data-id="4">Bonobo-Eyesdown</a></li>
+            <li><a href="/song-5" data-id="5">Burial-Near Dark</a></li>
+            <li><a href="/song-6" data-id="6">ZHU-Want U</a></li>
+            <li><a href="/song-7" data-id="7">Ariana Grande-7 Rings</a></li>
           </ul>
         </div>
+        </div>
       </div>
-
     </div>
     <div id="player">
       <div class="controls-wrapper">
         <img id="player-album-img" />
-        <div>
+        <div class="songPlay">
           <h4 id="play-song-name"></h4>
+          <button id="play-previous"><i  class="fas fa-backward"></i></button>
           <button id="play" class="control-button"></button>
+          <button id="play-next"><i class="fas fa-forward"></i></button>
+          <span id="current-time"></span> -
+          <span id="duration-time"></span>
         </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./src/scripts/Firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="./src/scripts/helperFunctions.js"></script>
+      <script src="./src/scripts/SongClass.js"></script>
     <script type="text/javascript" src="./assets/songs.js"></script>
     <script type="text/javascript" src="./src/scripts/TemplatesClass.js"></script>
     <script type="text/javascript" src="./src/scripts/EventsClass.js"></script>

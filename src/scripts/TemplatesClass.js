@@ -22,6 +22,9 @@ class TemplatesClass {
       if(state && state.url && state.url === "/login") {
         songBlockElement.innerHTML = this.getLoginPage();
       }
+      else if(state && state.url && state.url === "/register") {
+        songBlockElement.innerHTML = this.getRegisterPage();
+      }
       else {
         songBlockElement.innerHTML = this.getHomepage();
       }
@@ -39,6 +42,10 @@ class TemplatesClass {
         <li><a href="/song-1" data-id="1">Song 1</a></li>
         <li><a href="/song-2" data-id="2">Song 2</a></li>
         <li><a href="/song-3" data-id="3">Song 3</a></li>
+        <li><a href="/song-4" data-id="4">Bonobo-Eyesdown</a></li>
+        <li><a href="/song-5" data-id="5">Burial-Near Dark</a></li>
+        <li><a href="/song-6" data-id="6">ZHU-Want U</a></li>
+        <li><a href="/song-7" data-id="7">Ariana Grande-7 Rings</a></li>
       </ul>
       `);
     return template();
@@ -47,13 +54,13 @@ class TemplatesClass {
   getDetails = (song) => {
     const template = Handlebars.compile(`
       <div class="details-page">
-        <img class="background-img" src="{{background}}" />
+
         <div class="details-content">
           <div>
             <img class="cover-img" src="{{albumCover}}" />
           </div>
           <div>
-            <h4>Song: {{title}} </h4>
+            <h4>Song: {{artist}} - {{title}} </h4>
             <button id="play-button">Play</button>
           </div>
         </div>
@@ -75,16 +82,30 @@ class TemplatesClass {
     return template();
   };
 
+  getRegisterPage = () => {
+    const template = Handlebars.compile(`
+      <div class="register-page">
+        <form id="register-form">
+          <input id="register-email" type="email" placeholder="Email" />
+          <input id="register-password" type="password" placeholder="Password" />
+          <input id="register-confirm-password" type="password" placeholder="Confirm Password" />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    `);
+    return template();
+  };
+
   getIconPause = () => {
     const iconPause = Handlebars.compile(`
-      <i class="fas fa-pause"></i>
+      <i class="fas fa-pause-circle"></i>
     `);
     return iconPause();
   }
 
   getIconPlay = () => {
     const iconPlay = Handlebars.compile(`
-      <i class="fas fa-play"></i>
+      <i class="fas fa-play-circle"></i>
     `);
     return iconPlay();
   }
