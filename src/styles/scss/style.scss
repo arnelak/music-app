@@ -173,7 +173,7 @@ h3 {
   border-top: 1px solid $border-gray;
 }
 
-.controls-wrapper > div {
+.controls-wrapper > div.songPlay {
   margin-bottom: 0px;
   display: flex;
   margin-top: auto;
@@ -181,6 +181,7 @@ h3 {
 
 .controls-wrapper {
   display: flex;
+  align-items: center;
 
   img {
     height: 50px;
@@ -273,5 +274,23 @@ h3 {
       margin-left: 25px;
       padding-bottom: 14px;
       padding-top: 13px;
+    }
+  }
+
+  #progress-bar {
+    flex-grow: 1;
+    height: 2px;
+    background-color: $light-border;
+    position: relative;
+    margin-left: 25px;
+    margin-right: 35px;
+    cursor: pointer;
+
+    & > span {
+      display: block;
+      width: 0;
+      background-color: $pink;
+      height: 2px;
+      position: absolute;
     }
   }

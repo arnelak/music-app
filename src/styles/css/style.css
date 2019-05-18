@@ -126,13 +126,14 @@ h3 {
   padding: 10px;
   border-top: 1px solid #69696924; }
 
-.controls-wrapper > div {
+.controls-wrapper > div.songPlay {
   margin-bottom: 0px;
   display: flex;
   margin-top: auto; }
 
 .controls-wrapper {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   .controls-wrapper img {
     height: 50px;
     border-radius: 50%;
@@ -205,3 +206,18 @@ h3 {
     margin-left: 25px;
     padding-bottom: 14px;
     padding-top: 13px; }
+
+#progress-bar {
+  flex-grow: 1;
+  height: 2px;
+  background-color: gainsboro;
+  position: relative;
+  margin-left: 25px;
+  margin-right: 35px;
+  cursor: pointer; }
+  #progress-bar > span {
+    display: block;
+    width: 0;
+    background-color: #E91E63;
+    height: 2px;
+    position: absolute; }

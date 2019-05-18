@@ -6,6 +6,9 @@ class EventsClass {
     this.onLoginSubmit();
     this.onLogout();
     this.onRegisterSubmit();
+    this.addClickOnProgress();
+
+    this.interval = null;
   }
 
   addClickOnLink = () =>  {
@@ -19,6 +22,12 @@ class EventsClass {
         null,
         event.target.getAttribute('href'));
       });
+  }
+
+  addClickOnProgress = () => {
+    $('#progress-bar').on('click', (event) => {
+      this.seekTo(event.offsetX);
+    });
   }
 
   addClickOnControls = () => {
@@ -40,13 +49,25 @@ class EventsClass {
     playButton.addEventListener("click", (event) => {
       if(audio.paused) {
           audio.play();
+          this.setCurrentTimeInterval();
       }
       else {
           audio.pause();
+          clearInterval(this.interval);
       }
 
       this.changePlayerButton();
     });
+  }
+
+  seekTo = (clickedValueinPx) => {
+    const progressElement = document.querySelector("#progress-bar");
+    const progressTotalWidth = progressElement.offsetWidth;
+    const clickedPositionInPercentage = clickedValueinPx / progressTotalWidth * 100;
+    const totalTime = audio.duration;
+    const songSeekToSeconds = totalTime / 100 * clickedPositionInPercentage;
+
+    audio.currentTime = songSeekToSeconds;
   }
 
   onLoginSubmit = () => {
@@ -126,13 +147,21 @@ class EventsClass {
       songObject.setSong(song);
 
       this.playSong(song);
-      setInterval(() => {
-        document.querySelector("#current-time").innerHTML = secondsToMins(audio.currentTime);
-      }, 1000);
+
+      this.setCurrentTimeInterval();
+
+      requestAnimationFrame(() => {
+        const currentTime = audio.currentTime;
+        const totalTime = audio.duration;
+        const progressValue = Math.round(currentTime / totalTime * 100 * 100) / 100;
+
+        this.setProgress(progressValue);
+      });
 
       setTimeout(() => {
         document.querySelector("#duration-time").innerHTML = Math.round(audio.duration / 60 * 100) / 100;
       }, 1000);
+
       this.changePlayerButton();
     });
   }
@@ -168,10 +197,30 @@ class EventsClass {
     templates.updatePlayerControlsContent(nextSong);
   }
 
+  setCurrentTimeInterval = () => {
+    this.interval = setInterval(() => {
+      document.querySelector("#current-time").innerHTML = secondsToMins(audio.currentTime);
+    }, 1000);
+  }
+
   playSong = (song) => {
     audio.pause();
     audio.src = song.src;
     audio.play();
+  }
+
+  setProgress = (value) => {
+    document.querySelector("#progress-bar span").style.width = value + '%';
+
+    //console.log("ACT");
+
+    requestAnimationFrame(() => {
+      const currentTime = audio.currentTime;
+      const totalTime = audio.duration;
+      const progressValue = Math.round(currentTime / totalTime * 100 * 100) / 100;
+
+      this.setProgress(progressValue);
+    });
   }
 
   changePlayerButton = () => {
