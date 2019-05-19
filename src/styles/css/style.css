@@ -126,10 +126,12 @@ h3 {
   padding: 10px;
   border-top: 1px solid #69696924; }
 
-.controls-wrapper > div.songPlay {
+.controls-wrapper div.songPlay {
   margin-bottom: 0px;
   display: flex;
   margin-top: auto; }
+  .controls-wrapper div.songPlay h4, .controls-wrapper div.songPlay span {
+    user-select: none; }
 
 .controls-wrapper {
   display: flex;
@@ -145,9 +147,8 @@ h3 {
 
 #play-button {
   margin-left: 20px;
-  color: #696969; }
-  #play-button:hover {
-    cursor: pointer; }
+  color: #696969;
+  cursor: pointer; }
 
 .control-button, #play-next, #play-previous {
   margin-top: -8px;
@@ -159,13 +160,17 @@ h3 {
   color: #E91E63;
   padding: 0;
   font-size: 26px;
-  outline: none; }
-  .control-button:hover, #play-next:hover, #play-previous:hover {
-    cursor: pointer; }
+  outline: none;
+  cursor: pointer; }
 
 #play-next, #play-previous {
   font-size: 19px;
   margin-top: -2px; }
+
+.control-button {
+  transition: transform 150ms ease; }
+  .control-button:hover {
+    transform: scale(1.15) translateY(-2px); }
 
 .details-page .background-img {
   position: absolute;
@@ -209,15 +214,33 @@ h3 {
 
 #progress-bar {
   flex-grow: 1;
-  height: 2px;
-  background-color: gainsboro;
-  position: relative;
+  height: 4px;
   margin-left: 25px;
   margin-right: 35px;
   cursor: pointer; }
-  #progress-bar > span {
+  #progress-bar:hover span.progress-circle {
+    opacity: 1 !important;
+    transform: translateY(-4px) scale(1) !important; }
+  #progress-bar div.track {
+    height: 2px;
+    background-color: gainsboro;
+    position: relative;
+    transform: translateY(2px); }
+  #progress-bar span.active-track {
     display: block;
     width: 0;
     background-color: #E91E63;
     height: 2px;
-    position: absolute; }
+    position: relative;
+    transition: all 150ms ease; }
+    #progress-bar span.active-track span.progress-circle {
+      height: 9px;
+      width: 9px;
+      display: block;
+      opacity: 0;
+      background-color: #E91E63;
+      border-radius: 50%;
+      transform: translateY(-4px) scale(0);
+      right: -4px;
+      position: absolute;
+      transition: all 150ms ease; }

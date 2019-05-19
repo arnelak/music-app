@@ -181,7 +181,12 @@ class EventsClass {
 */
   playPreviousSong = () => {
     const currentSong = songObject.getCurrentSong();
-    const previousSong = songs.find((item) => item.id === currentSong.id - 1);
+    let previousSong = songs.find((item) => item.id === currentSong.id - 1);
+
+    if(!previousSong) {
+      previousSong = songs[songs.length - 1];
+    }
+
     songObject.setSong(previousSong);
 
     this.playSong(previousSong);
@@ -190,7 +195,12 @@ class EventsClass {
 
   playNextSong = () => {
     const currentSong = songObject.getCurrentSong();
-    const nextSong = songs.find((item) => item.id === currentSong.id + 1);
+    let nextSong = songs.find((item) => item.id === currentSong.id + 1);
+
+    if(!nextSong) {
+      nextSong = songs[0];
+    }
+
     songObject.setSong(nextSong);
 
     this.playSong(nextSong);
@@ -199,7 +209,7 @@ class EventsClass {
 
   setCurrentTimeInterval = () => {
     this.interval = setInterval(() => {
-      document.querySelector("#current-time").innerHTML = secondsToMins(audio.currentTime);
+      document.querySelector("#current-time").innerHTML = secondsToMins(audio.currentTime) + ' - ';
     }, 1000);
   }
 
@@ -210,9 +220,7 @@ class EventsClass {
   }
 
   setProgress = (value) => {
-    document.querySelector("#progress-bar span").style.width = value + '%';
-
-    //console.log("ACT");
+    document.querySelector("#progress-bar span.active-track").style.width = value + '%';
 
     requestAnimationFrame(() => {
       const currentTime = audio.currentTime;
@@ -225,7 +233,6 @@ class EventsClass {
 
   changePlayerButton = () => {
     const playButton = document.querySelector("#play");
-    //const pauseButton = document.querySelector("#play");
 
     playButton.innerHTML = audio.paused ? templates.getIconPlay() : templates.getIconPause();
   }

@@ -85,14 +85,18 @@
         <img id="player-album-img" />
         <div class="songPlay">
           <h4 id="play-song-name"></h4>
-          <button id="play-previous"><i  class="fas fa-backward"></i></button>
+          <button id="play-previous"><i class="fas fa-backward"></i></button>
           <button id="play" class="control-button"></button>
           <button id="play-next"><i class="fas fa-forward"></i></button>
-          <span id="current-time"></span> -
+          <span id="current-time"></span>
           <span id="duration-time"></span>
         </div>
         <div id="progress-bar">
-          <span></span>
+          <div class="track">
+            <span class="active-track">
+              <span class="progress-circle"></span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
