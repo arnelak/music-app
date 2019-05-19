@@ -25,7 +25,7 @@
           <li><i class="fas fa-search"></i><a href="index.html">Discover</a></li>
           <li><i class="fas fa-headphones"></i><a href="index.html">Songs</a></li>
           <li><i class="fas fa-play-circle"></i><a href="index.html">Albums</a></li>
-          <li><i class="far fa-user"></i><a href="index.html">Artists</a></li>
+          <li><i class="fas fa-user"></i><a href="index.html">Artists</a></li>
           <li><i class="fas fa-compact-disc"></i><a href="index.html">Music Videos</a></li>
           <li><i class="fas fa-music"></i><a href="index.html">Radio</a></li>
           <li><a href="/login">Login</a></li>
@@ -33,7 +33,7 @@
           <li><span id="logoutElement">Logout</span></li>
           <p class="titles">Your Music</p>
           <li><i class="fas fa-heart"></i><a href="index.html">Favourite</a></li>
-          <li><i class="far fa-clock"></i><a href="index.html">Play History</a></li>
+          <li><i class="fas fa-clock"></i><a href="index.html">Play History</a></li>
           <li><i class="fas fa-download"></i><a href="index.html">Download Items</a></li>
           <li><i class="fas fa-copy"></i><a href="index.html">Local Files</a></li>
         </ul>
@@ -42,11 +42,14 @@
         <div class="header">
           <div class="navBlock">
              <i class="fas fa-search"></i>
-             <input id="myText" type="text" name="text" placeholder="Search Song, Album or Singer...">
+             <input id="myText" type="text" name="text" placeholder="Search Song...">
           </div>
           <i id="notification" class="far fa-bell"></i>
+          <span class="redNotification"></span>
           <div class="userBlock">
              <img src="images/image.jpg">
+             <p>Name Surname</p>
+             <i id="circle-down" class="fas fa-chevron-down"></i>
           </div>
         </div>
 
@@ -85,9 +88,9 @@
         <img id="player-album-img" />
         <div class="songPlay">
           <h4 id="play-song-name"></h4>
-          <button id="play-previous"><i class="fas fa-backward"></i></button>
+          <button id="play-previous"><i class="fas fa-fast-backward"></i></button>
           <button id="play" class="control-button"></button>
-          <button id="play-next"><i class="fas fa-forward"></i></button>
+          <button id="play-next"><i class="fas fa-fast-forward"></i></button>
           <span id="current-time"></span>
           <span id="duration-time"></span>
         </div>
