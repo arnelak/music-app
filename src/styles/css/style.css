@@ -134,7 +134,7 @@ body {
     height: 30px;
     margin-top: 12px;
     outline: none;
-    transition: width 550ms ease-out; }
+    transition: transform 550ms ease-out; }
     .header .navBlock #myText:focus {
       border-bottom: 1px solid #69696924; }
 
@@ -143,15 +143,14 @@ h3 {
   color: #696969; }
 
 #songList {
-  width: 100%;
   display: flex; }
-  #songList .block1, #songList .block2, #songList .block3, #songList .block4 {
+  #songList div {
     background-color: white;
     margin-left: 5px;
     box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.09); }
-    #songList .block1 .blockImage, #songList .block2 .blockImage, #songList .block3 .blockImage, #songList .block4 .blockImage {
+    #songList div .blockImage {
       margin: 8px;
-      width: 17vw; }
+      width: 12vw; }
 
 #current-time, #duration-time {
   color: #696969; }

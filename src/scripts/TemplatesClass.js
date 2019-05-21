@@ -53,6 +53,13 @@ class TemplatesClass {
           <img class="blockImage" src="https://lamaster.es/wp-content/uploads/2019/02/ariana-grande-thank-you-next-cover.jpg" >
         </div>
       </div>
+      ${this.renderSongsList()}
+      `);
+    return template();
+  }
+
+  renderSongsList = () => {
+    const template = Handlebars.compile(`
       <ul>
         <li><a href="/song-1" data-id="1">Song 1</a></li>
         <li><a href="/song-2" data-id="2">Song 2</a></li>
@@ -62,7 +69,7 @@ class TemplatesClass {
         <li><a href="/song-6" data-id="6">ZHU-Want U</a></li>
         <li><a href="/song-7" data-id="7">Ariana Grande-7 Rings</a></li>
       </ul>
-      `);
+    `);
     return template();
   }
 
