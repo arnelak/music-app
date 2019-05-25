@@ -235,5 +235,6 @@ class EventsClass {
     const playButton = document.querySelector("#play");
 
     playButton.innerHTML = audio.paused ? templates.getIconPlay() : templates.getIconPause();
+
   }
 }

@@ -40,17 +40,25 @@ class TemplatesClass {
     const template = Handlebars.compile(`
       <h3>Recomended Albums</h3>
       <div id="songList">
-        <div class="block1">
+        <div>
           <img class="blockImage" src="https://freight.cargo.site/t/original/i/c842d1eb353838ef10c6b5f11fa27e47549604a59ec9f180791d0431b3ea209c/02_BONOBO-FIRST-FIRES-single.jpg" >
+          <h5>Bonobo</h5>
+          <p>12 Songs</p>
         </div>
-        <div class="block2">
+        <div>
           <img class="blockImage" src="https://img.discogs.com/7s2dUoQwO_QIorLghKxn56IYObk=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-689255-1322218106.jpeg.jpg">
+          <h5>Burial</h5>
+          <p>5 Songs</p>
         </div>
-        <div class="block3">
+        <div>
           <img class="blockImage" src="http://is5.mzstatic.com/image/thumb/Music18/v4/24/2e/d3/242ed380-9dde-4ea7-eb57-185971e3b0dd/source/100000x100000-999.jpg" >
+          <h5>Zhu</h5>
+          <p>8 Songs</p>
         </div>
-        <div class="block4">
+        <div>
           <img class="blockImage" src="https://lamaster.es/wp-content/uploads/2019/02/ariana-grande-thank-you-next-cover.jpg" >
+          <h5>Ariana Grande</h5>
+          <p>10 Songs</p>
         </div>
       </div>
       ${this.renderSongsList()}
@@ -61,13 +69,39 @@ class TemplatesClass {
   renderSongsList = () => {
     const template = Handlebars.compile(`
       <ul>
-        <li><a href="/song-1" data-id="1">Song 1</a></li>
-        <li><a href="/song-2" data-id="2">Song 2</a></li>
-        <li><a href="/song-3" data-id="3">Song 3</a></li>
-        <li><a href="/song-4" data-id="4">Bonobo-Eyesdown</a></li>
-        <li><a href="/song-5" data-id="5">Burial-Near Dark</a></li>
-        <li><a href="/song-6" data-id="6">ZHU-Want U</a></li>
-        <li><a href="/song-7" data-id="7">Ariana Grande-7 Rings</a></li>
+        <li>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="https://f4.bcbits.com/img/a2150662318_10.jpg" >
+          <a href="/song-1" data-id="1">Song 1</a>
+        </li>
+        <li>
+          <i class="fas fa-caret-right"></i><img class="listImg" src="http://static.stereogum.com/blogs.dir/2/files/img/enjoyed/enjoyed_cover_print.jpg" ><a href="/song-2" data-id="2">Song 2</a>
+        </li>
+        <li>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="http://static.stereogum.com/blogs.dir/2/files/img/enjoyed/enjoyed_cover_print.jpg" >
+          <a href="/song-3" data-id="3">Song 3</a>
+        </li>
+        <li>
+          <i id="pauseList" class="fas fa-pause">
+          </i><img class="listImg" src="https://freight.cargo.site/t/original/i/c842d1eb353838ef10c6b5f11fa27e47549604a59ec9f180791d0431b3ea209c/02_BONOBO-FIRST-FIRES-single.jpg" >
+          <a href="/song-4" data-id="4">Bonobo-Eyesdown</a>
+        </li>
+        <li>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="https://f4.bcbits.com/img/a2150662318_10.jpg" >
+          <a href="/song-5" data-id="5">Burial-Near Dark</a>
+        </li>
+        <li>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="https://img.discogs.com/7s2dUoQwO_QIorLghKxn56IYObk=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-689255-1322218106.jpeg.jpg" >
+          <a href="/song-6" data-id="6">ZHU-Want U</a>
+        </li>
+        <li>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="http://is5.mzstatic.com/image/thumb/Music18/v4/24/2e/d3/242ed380-9dde-4ea7-eb57-185971e3b0dd/source/100000x100000-999.jpg" >
+          <a href="/song-7" data-id="7">Ariana Grande-7 Rings</a>
+        </li>
       </ul>
     `);
     return template();

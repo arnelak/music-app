@@ -192,17 +192,27 @@ h3 {
   margin-left: 15px;
   color: $text-gray;
 }
+
 #songList {
   display: flex;
 
   div {
-    background-color: white;
-    margin-left: 5px;
-    box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.09);
+    background-color: $white;
+    margin-left: 20px;
+    box-shadow: 4px 7px 10px rgba(34, 25, 25, 0.09);
+    border-radius: 3px;
+
+
+    p, h5 {
+      font-size: 13px;
+      margin: 5px;
+      color: $text-gray;
+    }
 
     .blockImage {
-        margin: 8px;
-        width: 12vw;
+        width: 13vw;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
     }
   }
 }
@@ -227,6 +237,30 @@ h3 {
       user-select: none;
     }
   }
+}
+
+ul {
+  li {
+    height: 30px;
+  }
+  #pauseList {
+    font-size: 10px;
+    margin-left: 0px;
+    color: $pink;
+  }
+
+  i {
+    color: $text-gray;
+  }
+
+  .listImg {
+    margin-bottom: -4px;
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 20px;
+    margin-left: 20px;
+  }
+
 }
 
 .controls-wrapper {
