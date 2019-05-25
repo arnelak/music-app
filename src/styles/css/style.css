@@ -104,6 +104,8 @@ body {
     font-size: 13px;
     margin-left: 15px;
     font-weight: 600; }
+    .header p:hover {
+      cursor: pointer; }
   .header .redNotification {
     background-color: #E91E63;
     width: 5px;
@@ -118,6 +120,8 @@ body {
     margin-top: 23px;
     position: absolute !important;
     right: 238px !important; }
+    .header #notification:hover {
+      cursor: pointer; }
   .header .userBlock {
     display: flex;
     position: absolute;
@@ -128,11 +132,13 @@ body {
       margin-left: 20px;
       margin-top: 18px;
       color: #696969; }
+      .header .userBlock #circle-down:hover {
+        cursor: pointer; }
   .header .navBlock #myText {
     background-color: #f5f5f55c;
     border: none;
     height: 30px;
-    margin-top: 12px;
+    margin-top: 13px;
     outline: none;
     transition: transform 550ms ease-out; }
     .header .navBlock #myText:focus {
@@ -174,7 +180,8 @@ h3 {
     user-select: none; }
 
 ul li {
-  height: 30px; }
+  height: 30px;
+  position: relative; }
 
 ul #pauseList {
   font-size: 10px;
@@ -190,6 +197,12 @@ ul .listImg {
   margin-right: 20px;
   width: 20px;
   margin-left: 20px; }
+
+ul .fa-heart {
+  color: #E91E63;
+  position: absolute;
+  right: 20px;
+  font-size: 10px; }
 
 .controls-wrapper {
   display: flex;

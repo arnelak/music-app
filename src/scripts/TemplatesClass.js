@@ -73,34 +73,43 @@ class TemplatesClass {
           <i class="fas fa-caret-right"></i>
           <img class="listImg" src="https://f4.bcbits.com/img/a2150662318_10.jpg" >
           <a href="/song-1" data-id="1">Song 1</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
-          <i class="fas fa-caret-right"></i><img class="listImg" src="http://static.stereogum.com/blogs.dir/2/files/img/enjoyed/enjoyed_cover_print.jpg" ><a href="/song-2" data-id="2">Song 2</a>
+          <i class="fas fa-caret-right"></i>
+          <img class="listImg" src="http://static.stereogum.com/blogs.dir/2/files/img/enjoyed/enjoyed_cover_print.jpg" >
+          <a href="/song-2" data-id="2">Song 2</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
           <i class="fas fa-caret-right"></i>
           <img class="listImg" src="http://static.stereogum.com/blogs.dir/2/files/img/enjoyed/enjoyed_cover_print.jpg" >
           <a href="/song-3" data-id="3">Song 3</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
           <i id="pauseList" class="fas fa-pause">
           </i><img class="listImg" src="https://freight.cargo.site/t/original/i/c842d1eb353838ef10c6b5f11fa27e47549604a59ec9f180791d0431b3ea209c/02_BONOBO-FIRST-FIRES-single.jpg" >
           <a href="/song-4" data-id="4">Bonobo-Eyesdown</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
           <i class="fas fa-caret-right"></i>
           <img class="listImg" src="https://f4.bcbits.com/img/a2150662318_10.jpg" >
           <a href="/song-5" data-id="5">Burial-Near Dark</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
           <i class="fas fa-caret-right"></i>
           <img class="listImg" src="https://img.discogs.com/7s2dUoQwO_QIorLghKxn56IYObk=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-689255-1322218106.jpeg.jpg" >
           <a href="/song-6" data-id="6">ZHU-Want U</a>
+          <i class="fas fa-heart"></i>
         </li>
         <li>
           <i class="fas fa-caret-right"></i>
           <img class="listImg" src="http://is5.mzstatic.com/image/thumb/Music18/v4/24/2e/d3/242ed380-9dde-4ea7-eb57-185971e3b0dd/source/100000x100000-999.jpg" >
           <a href="/song-7" data-id="7">Ariana Grande-7 Rings</a>
+          <i class="fas fa-heart"></i>
         </li>
       </ul>
     `);

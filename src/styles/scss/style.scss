@@ -141,6 +141,9 @@ body {
     font-size: 13px;
     margin-left: 15px;
     font-weight: 600;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .redNotification {
     background-color: $pink;
@@ -158,6 +161,9 @@ body {
     margin-top: 23px;
     position: absolute !important;
     right: 238px !important;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 .userBlock {
@@ -165,12 +171,16 @@ body {
   position: absolute;
   right: 11px;
 
+
   #circle-down {
     font-size: 15px;
     display: inline-block;
     margin-left: 20px;
     margin-top: 18px;
     color: $text-gray;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 .navBlock{
@@ -179,7 +189,7 @@ body {
     background-color: $white-smoke;
     border: none;
     height: 30px;
-    margin-top: 12px;
+    margin-top: 13px;
     outline: none;
     transition: transform 550ms ease-out;
     &:focus {
@@ -242,6 +252,7 @@ h3 {
 ul {
   li {
     height: 30px;
+    position: relative;
   }
   #pauseList {
     font-size: 10px;
@@ -260,7 +271,12 @@ ul {
     width: 20px;
     margin-left: 20px;
   }
-
+   .fa-heart{
+     color: $pink;
+     position: absolute;
+     right: 20px;
+     font-size: 10px;
+   }
 }
 
 .controls-wrapper {
