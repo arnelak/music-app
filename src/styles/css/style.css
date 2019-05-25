@@ -179,30 +179,26 @@ h3 {
   .controls-wrapper div.songPlay h4, .controls-wrapper div.songPlay span {
     user-select: none; }
 
-ul li {
+ul.songs-play-list li {
   height: 30px;
-  position: relative; }
+  position: relative;
+  display: flex;
+  align-items: center; }
+  ul.songs-play-list li:nth-child(even) {
+    background-color: white; }
+  ul.songs-play-list li > div {
+    margin-left: auto; }
 
-ul #pauseList {
-  font-size: 10px;
-  margin-left: 0px;
-  color: #E91E63; }
+ul.songs-play-list i {
+  color: #E91E63;
+  font-size: 20px; }
 
-ul i {
-  color: #696969; }
-
-ul .listImg {
+ul.songs-play-list .listImg {
   margin-bottom: -4px;
   border-radius: 50%;
   margin-right: 20px;
   width: 20px;
-  margin-left: 20px; }
-
-ul .fa-heart {
-  color: #E91E63;
-  position: absolute;
-  right: 20px;
-  font-size: 10px; }
+  height: 20px; }
 
 .controls-wrapper {
   display: flex;

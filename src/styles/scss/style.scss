@@ -249,19 +249,25 @@ h3 {
   }
 }
 
-ul {
+ul.songs-play-list {
   li {
     height: 30px;
     position: relative;
-  }
-  #pauseList {
-    font-size: 10px;
-    margin-left: 0px;
-    color: $pink;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(even) {
+      background-color: white;
+    }
+
+    & > div {
+      margin-left: auto;
+    }
   }
 
   i {
-    color: $text-gray;
+    color: $pink;
+    font-size: 20px;
   }
 
   .listImg {
@@ -269,14 +275,8 @@ ul {
     border-radius: 50%;
     margin-right: 20px;
     width: 20px;
-    margin-left: 20px;
+    height: 20px;
   }
-   .fa-heart{
-     color: $pink;
-     position: absolute;
-     right: 20px;
-     font-size: 10px;
-   }
 }
 
 .controls-wrapper {

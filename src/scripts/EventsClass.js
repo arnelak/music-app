@@ -1,6 +1,7 @@
 class EventsClass {
 
   constructor() {
+    this.addOnListPlayEvent();
     this.addClickOnLink();
     this.addClickOnControls();
     this.onLoginSubmit();
@@ -27,6 +28,12 @@ class EventsClass {
   addClickOnProgress = () => {
     $('#progress-bar').on('click', (event) => {
       this.seekTo(event.offsetX);
+    });
+  }
+
+  addOnListPlayEvent = () => {
+    $('body').on('click', '.list-play-button', (event) => {
+      console.log("EV", event);
     });
   }
 
