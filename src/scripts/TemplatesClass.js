@@ -95,9 +95,7 @@ class TemplatesClass {
         <img class="listImg" src="{{albumCover}}" >
         <a href="/song-{{id}}" data-id="{{id}}">{{title}}</a>
         <div>
-          <button class="list-play-button">
-            <i class="fas fa-caret-right"></i>
-          </button>
+          <i class="fas fa-caret-right list-play-button" data-id="{{id}}"></i>
           <i class="fas fa-heart"></i>
         </div>
       </li>

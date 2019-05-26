@@ -33,7 +33,18 @@ class EventsClass {
 
   addOnListPlayEvent = () => {
     $('body').on('click', '.list-play-button', (event) => {
-      console.log("EV", event);
+      const id = $(event.target).data("id");
+      const song = getSongObjectByID(id);
+
+      this.setSongAndPlay(song);
+      if(!audio.paused) {
+        $(event.target)[0].classList.remove('fa-caret-right');
+        $(event.target)[0].classList.add('fa-pause');
+      }
+      else {
+        $(event.target)[0].classList.remove('fa-pause');
+        $(event.target)[0].classList.add('fa-caret-right');
+      }
     });
   }
 
@@ -151,25 +162,7 @@ class EventsClass {
 
       document.querySelector("#sidebar ul").classList.add("short-height");
 
-      songObject.setSong(song);
-
-      this.playSong(song);
-
-      this.setCurrentTimeInterval();
-
-      requestAnimationFrame(() => {
-        const currentTime = audio.currentTime;
-        const totalTime = audio.duration;
-        const progressValue = Math.round(currentTime / totalTime * 100 * 100) / 100;
-
-        this.setProgress(progressValue);
-      });
-
-      setTimeout(() => {
-        document.querySelector("#duration-time").innerHTML = Math.round(audio.duration / 60 * 100) / 100;
-      }, 1000);
-
-      this.changePlayerButton();
+      this.setSongAndPlay(song);
     });
   }
 
@@ -218,6 +211,28 @@ class EventsClass {
     this.interval = setInterval(() => {
       document.querySelector("#current-time").innerHTML = secondsToMins(audio.currentTime) + ' - ';
     }, 1000);
+  }
+
+  setSongAndPlay = (song) => {
+    this.playSong(song);
+    songObject.setSong(song);
+    templates.updatePlayerControlsContent(song);
+
+    this.setCurrentTimeInterval();
+
+    requestAnimationFrame(() => {
+      const currentTime = audio.currentTime;
+      const totalTime = audio.duration;
+      const progressValue = Math.round(currentTime / totalTime * 100 * 100) / 100;
+
+      this.setProgress(progressValue);
+    });
+
+    setTimeout(() => {
+      document.querySelector("#duration-time").innerHTML = Math.round(audio.duration / 60 * 100) / 100;
+    }, 1000);
+
+    this.changePlayerButton();
   }
 
   playSong = (song) => {

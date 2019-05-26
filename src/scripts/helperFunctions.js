@@ -9,3 +9,8 @@ function secondsToMins (secondsInput) {
     if (seconds < 10) {seconds = "0"+seconds;}
     return minutes+':'+seconds;
 }
+
+function getSongObjectByID (id) {
+  const song = songs.find((item) => item.id === id);
+  return song;
+}
