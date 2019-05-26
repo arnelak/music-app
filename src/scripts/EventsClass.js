@@ -35,17 +35,39 @@ class EventsClass {
     $('body').on('click', '.list-play-button', (event) => {
       const id = $(event.target).data("id");
       const song = getSongObjectByID(id);
+      const currentPlayingSong = songObject.getCurrentSong();
+      const isClickedOnTheSameSong = currentPlayingSong && currentPlayingSong.id === song.id;
 
-      this.setSongAndPlay(song);
-      if(!audio.paused) {
-        $(event.target)[0].classList.remove('fa-caret-right');
-        $(event.target)[0].classList.add('fa-pause');
+      // znaci uslov, ako smo kliknuli na istu pjesmu, naravno uradi pause
+      if(isClickedOnTheSameSong === true) {
+        if(audio.paused === true) {
+          $(event.target)[0].classList.remove('flaticon-multimedia-1');
+          $(event.target)[0].classList.add('fa-pause');
+          audio.play();
+          this.changePlayerButton();
+        }
+        else {
+          $(event.target)[0].classList.remove('fa-pause');
+          $(event.target)[0].classList.add('flaticon-multimedia-1');
+          audio.pause();
+          this.changePlayerButton();
+        }
       }
       else {
-        $(event.target)[0].classList.remove('fa-pause');
-        $(event.target)[0].classList.add('fa-caret-right');
+        $(event.target)[0].classList.remove('flaticon-multimedia-1');
+        $(event.target)[0].classList.add('fa-pause');
+        this.setSongAndPlay(song);
+        this.resetIcons(song.id);
       }
     });
+  }
+
+  resetIcons = (id) => {
+     $.each($('.songs-play-list li'), (index, element) => {
+       if($(element).find('div i:first-child').data("id") !== id) {
+        // $(element)[0].classList.remove('fa-pause');
+       }
+     });
   }
 
   addClickOnControls = () => {

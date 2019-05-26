@@ -250,11 +250,18 @@ h3 {
 }
 
 ul.songs-play-list {
+    padding-left: 20px;
+
   li {
-    height: 30px;
+    height: 35px;
     position: relative;
     display: flex;
     align-items: center;
+
+    &:hover {
+      border-radius: 3px;
+      box-shadow: 1px -1px 20px 1px rgba(34, 25, 25, 0.09);
+    }
 
     &:nth-child(even) {
       background-color: white;
@@ -267,13 +274,19 @@ ul.songs-play-list {
 
   i {
     color: $pink;
-    font-size: 20px;
+    font-size: 11px;
+    margin-right: 10px;
+    margin-left: -5px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .listImg {
     margin-bottom: -4px;
     border-radius: 50%;
     margin-right: 20px;
+    margin-left: 10px;
     width: 20px;
     height: 20px;
   }
@@ -311,7 +324,7 @@ ul.songs-play-list {
   background-color: white;
   color: $pink;
   padding: 0;
-  font-size: 26px;
+  font-size: 27px;
   outline: none;
   cursor: pointer;
 }
@@ -326,9 +339,9 @@ ul.songs-play-list {
 }
 
 .control-button {
-  transition: transform 150ms ease;
+  transition: transform 50ms ease;
   &:hover {
-    transform: scale(1.15) translateY(-2px);
+    transform: scale(1.2) translateY(-3px);
   }
 }
 
