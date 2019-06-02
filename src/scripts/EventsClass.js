@@ -62,10 +62,24 @@ class EventsClass {
     });
   }
 
+/*
+  znaci radimo loop kroz ul li, znaci imamo niz od li
+  trebamo proci kroz taj niz i potrazit prvu ikonicu, jer je prva ikonica play / paused
+  i zbog cega imamo u ovom slucaju $($(element...)[0])
+  taj find(...) nam nije vratio jedan element, nego vratio neki niz, a u tom nizu pod indexom 0 je ustvari ta ikonica tj. element
+  i sta je problem, znaci to nam je vratilo element, al mi ne mozemo reci htmlElement.data("id")
+  to ti je isto kao da si rekla <span>.data("id"), a to je nemoguce jer data("id") je jquery metoda
+  tako da bi mi morali ubacit taj element u jquery da bi mogli koristit te metode
+  znaci $($(element)[0]).jqueryMetoda(...) i onda smo taj data("id") uporedili sa trenutno playanom pjesmom, tj. njenim IDjem
+  i kao sto vidis mi trazimo sve ikonice koje nemaju taj id, znaci sve ikonice resetuj osim te koja je aktivna
+  i sta smo onda uradili, na svim tim ikonicama smo obrisali pause ikonu, a dodali play ikonu, a play ikona je normala ona pocetna
+*/
   resetIcons = (id) => {
      $.each($('.songs-play-list li'), (index, element) => {
-       if($(element).find('div i:first-child').data("id") !== id) {
-        // $(element)[0].classList.remove('fa-pause');
+       if($($(element).find('div i:first-child')[0]).data("id") !== id) {
+         const iconElement = $(element).find('div i:first-child')[0];
+         iconElement.classList.remove('fa-pause');
+         iconElement.classList.add('flaticon-multimedia-1');
        }
      });
   }
