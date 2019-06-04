@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "simple-dev-server",
+    "start": "browser-sync start --server --files '*'",
     "sass": "gulp sass",
     "watch": "gulp sass:watch",
     "server": "browser-sync start --server --files '*'"

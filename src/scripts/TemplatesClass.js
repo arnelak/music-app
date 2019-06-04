@@ -90,8 +90,8 @@ class TemplatesClass {
         <img class="listImg" src="{{albumCover}}" >
         <a href="/song-{{id}}" data-id="{{id}}">{{title}}</a>
         <div>
-          <i class="fas fa-caret-right list-play-button" data-id="{{id}}"></i>
-          <i class="fas fa-heart"></i>
+          <i class="fas flaticon-multimedia-1 list-play-button" data-id="{{id}}"></i>
+          <i class="flaticon-heart"></i>
         </div>
       </li>
     `);
