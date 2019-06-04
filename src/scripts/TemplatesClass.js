@@ -52,31 +52,26 @@ class TemplatesClass {
   renderAlbums = () => {
     const template = Handlebars.compile(`
       <h3>Recomended Albums</h3>
-      <div id="songList">
+      <div class="albumsList">
         <div>
-          <img class="blockImage" src="https://freight.cargo.site/t/original/i/c842d1eb353838ef10c6b5f11fa27e47549604a59ec9f180791d0431b3ea209c/02_BONOBO-FIRST-FIRES-single.jpg" >
-          <h5>Bonobo</h5>
-          <p>12 Songs</p>
+          ${
+          albums.map((item) => {
+            return (
+                  `
+                    <a href="/albums/${item.id}">
+                      <img class="blockImage" src="${item.albumCover}" >
+                      <h5>${item.title}</h5>
+                      <p>12 Songs</p>
+                    </a>  
+                  `
+              )
+            }).join('')
+          }
         </div>
-        <div>
-          <img class="blockImage" src="https://img.discogs.com/7s2dUoQwO_QIorLghKxn56IYObk=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-689255-1322218106.jpeg.jpg">
-          <h5>Burial</h5>
-          <p>5 Songs</p>
         </div>
-        <div>
-          <img class="blockImage" src="http://is5.mzstatic.com/image/thumb/Music18/v4/24/2e/d3/242ed380-9dde-4ea7-eb57-185971e3b0dd/source/100000x100000-999.jpg" >
-          <h5>Zhu</h5>
-          <p>8 Songs</p>
-        </div>
-        <div>
-          <img class="blockImage" src="https://lamaster.es/wp-content/uploads/2019/02/ariana-grande-thank-you-next-cover.jpg" >
-          <h5>Ariana Grande</h5>
-          <p>10 Songs</p>
-        </div>
-      </div>
       `);
     return template();
-  }
+  };
 
   renderSongsList = () => {
     const template = Handlebars.compile(`
@@ -87,7 +82,7 @@ class TemplatesClass {
       </ul>
     `);
     return template();
-  }
+  };
 
   renderSingleSong = (song) => {
     const template = Handlebars.compile(`
