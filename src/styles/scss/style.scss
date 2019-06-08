@@ -49,7 +49,7 @@ body {
   display: flex;
   margin: auto;
 
-  #song-block {
+  #page-block {
     display: inline-block;
 
     ul {
@@ -284,8 +284,8 @@ ul.songs-play-list {
   }
 
   i {
-    color: $pink;
-    font-size: 11px;
+    color: $pink !important;
+    font-size: 20px;
     margin-right: 10px;
     margin-left: -5px;
     &:hover {
@@ -446,3 +446,10 @@ ul.songs-play-list {
       }
     }
   }
+
+
+.albums-wrapper-block {
+  * {
+    pointer-events: none;
+  }
+}

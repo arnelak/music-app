@@ -1,43 +1,36 @@
 class TemplatesClass {
   constructor() {
-    const contentBlock = document.querySelector("#song-block");
+    const contentBlock = document.querySelector("#page-block");
     const page = this.getHomepage();
 
     contentBlock.innerHTML = page;
   }
 
   renderTemplate = (state, songBlockElement) => {
-    if(state && state.songID) {
-      const song = songs.filter((item) => item.id === parseInt(state.songID));
-
-      songBlockElement.innerHTML = this.getDetailsPage(song[0]);
+    console.log("URL", state);
+    if(state && state.url && state.url === "/login") {
+      songBlockElement.innerHTML = this.getLoginPage();
+    }
+    else if(state && state.url && state.url === "/register") {
+      songBlockElement.innerHTML = this.getRegisterPage();
+    }
+    else if(state && state.url && state.url.includes('/albums') === true) {
       /*
-        Ovdje je fazon, posto ne koristimo jquery vec cisti javascript
-        funkcija getSongPageTemplate generise novi html,
-        u sklopu tog html-a je i play button,
-        al je fazon svaki put kad generises novi html na taj button trebas dodat event listener
-        i zato ponovo pozovam addEventListenerOnPlayButton da dodas click event na taj button
-        alternativa tome bi bila da koristimo jquery i .on('click'),
-        u tom slucaju ne bi morali svaki put da dodajemo taj addEventListenerOnPlayButton
+      znaci imamo ovaj uslov, posto smo proslijedili onaj state objekat koji u sebi i ma ID i url
+      i posto mozemo imat url=/songs/3 url=/genres/5 url=/albums/7
+      koristimo metodu na stringu .includes('/nekistring'), a includes vraca true ili false ako string sadrzi to
+      i naravno ako url sadrzi /albums, onda ocigledno hocemo da prikazemo albums details page
+      getAlbumsPage metoda
       */
-      events.addEventListenerOnPlayButton(song[0]);
+      songBlockElement.innerHTML = this.getAlbumsPage(state.ID);
+    }
+    else if(state && state.url && state.url.includes('/song') === true) {
+      const song = songs.filter((item) => item.id === parseInt(state.ID));
+      songBlockElement.innerHTML = this.getDetailsPage(song[0]);
+        events.addEventListenerOnPlayButton(song[0]);
     }
     else {
-
-      if(state && state.url && state.url === "/login") {
-        songBlockElement.innerHTML = this.getLoginPage();
-      }
-      else if(state && state.url && state.url === "/register") {
-        songBlockElement.innerHTML = this.getRegisterPage();
-      }
-      else {
-        songBlockElement.innerHTML = this.getHomepage();
-      }
-      /*
-        ista stvar i ovdje, getHomepageTemplate vrati novi html sa onim linkovima
-        i svaki put moramo ponovo da dodamo click evente na te linkove da bi radili bez reloada
-      */
-      //events.addClickOnLink();
+      songBlockElement.innerHTML = this.getHomepage();
     }
   }
 
@@ -45,6 +38,13 @@ class TemplatesClass {
     const template = Handlebars.compile(`
       ${this.renderAlbums()}
       ${this.renderSongsList()}
+      `);
+    return template();
+  }
+
+  getAlbumsPage = (id) => {
+    const template = Handlebars.compile(`
+      album
       `);
     return template();
   }
@@ -58,11 +58,11 @@ class TemplatesClass {
           albums.map((item) => {
             return (
                   `
-                    <a href="/albums/${item.id}">
+                    <a href="/albums/${item.id}" data-id="${item.id}" class="albums-wrapper-block">
                       <img class="blockImage" src="${item.albumCover}" >
                       <h5>${item.title}</h5>
                       <p>12 Songs</p>
-                    </a>  
+                    </a>
                   `
               )
             }).join('')

@@ -26,6 +26,6 @@
   koje ti se nalaze u templateFunctions.js
 */
 window.onpopstate = history.onpushstate = function(event) {
-    const songBlockElement = document.querySelector("#song-block");
-    templates.renderTemplate(event.state, songBlockElement);
+    const pageBlockElement = document.querySelector("#page-block");
+    templates.renderTemplate(event.state, pageBlockElement);
 };

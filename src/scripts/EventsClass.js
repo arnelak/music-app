@@ -17,7 +17,7 @@ class EventsClass {
       event.preventDefault();
 
       history.pushState({
-        songID: event.target.getAttribute('data-id'),
+        ID: event.target.getAttribute('data-id'),
         url: event.target.getAttribute('href'),
       },
         null,
@@ -78,7 +78,7 @@ class EventsClass {
      $.each($('.songs-play-list li'), (index, element) => {
        if($($(element).find('div i:first-child')[0]).data("id") !== id) {
          const iconElement = $(element).find('div i:first-child')[0];
-         iconElement.classList.remove('fa-pause');
+         iconElement.classList.remove('fa-play-circle');
          iconElement.classList.add('flaticon-multimedia-1');
        }
      });

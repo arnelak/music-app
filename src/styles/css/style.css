@@ -38,11 +38,11 @@ body {
 .container {
   display: flex;
   margin: auto; }
-  .container #song-block {
+  .container #page-block {
     display: inline-block; }
-    .container #song-block ul {
+    .container #page-block ul {
       list-style: none; }
-      .container #song-block ul a {
+      .container #page-block ul a {
         text-decoration: none;
         color: #696969;
         font-size: 13px; }
@@ -203,8 +203,8 @@ ul.songs-play-list {
     ul.songs-play-list li > div {
       margin-left: auto; }
   ul.songs-play-list i {
-    color: #E91E63;
-    font-size: 11px;
+    color: #E91E63 !important;
+    font-size: 20px;
     margin-right: 10px;
     margin-left: -5px; }
     ul.songs-play-list i:hover {
@@ -329,3 +329,6 @@ ul.songs-play-list {
       right: -4px;
       position: absolute;
       transition: all 150ms ease; }
+
+.albums-wrapper-block * {
+  pointer-events: none; }
