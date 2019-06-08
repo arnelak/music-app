@@ -6,6 +6,7 @@
 
 .logo {
   border-bottom: 1px solid $border-gray;
+  background-color: $white;
 
   a {
     font-size: 19px;
@@ -40,7 +41,7 @@ body {
   background-color: $white;
   padding: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: $white;
   box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.32);
   margin: 0px;
 }
@@ -108,7 +109,7 @@ body {
         &:hover {
           background-color: $pink;
           i, a, span {
-            color: white;
+            color: $white;
           }
         }
       }
@@ -127,6 +128,7 @@ body {
   padding-left: 40px;
   display: flex;
   border-bottom: 1px solid $border-gray;
+  background-color: $white;
   position: relative;
 
   i {
@@ -262,6 +264,7 @@ h3 {
 
 ul.songs-play-list {
     padding-left: 20px;
+    width: calc(100vw - 230px);
 
   li {
     height: 35px;
@@ -275,7 +278,7 @@ ul.songs-play-list {
     }
 
     &:nth-child(even) {
-      background-color: white;
+      background-color: $white;
     }
 
     & > div {
@@ -285,9 +288,13 @@ ul.songs-play-list {
 
   i {
     color: $pink !important;
-    font-size: 20px;
+    font-size: 14px;
     margin-right: 10px;
     margin-left: -5px;
+
+    &::before {
+
+    }
     &:hover {
       cursor: pointer;
     }
@@ -332,7 +339,7 @@ ul.songs-play-list {
   margin-right: 10px;
   margin-left: 20px;
   border: none;
-  background-color: white;
+  background-color: $white;
   color: $pink;
   padding: 0;
   font-size: 27px;
@@ -372,7 +379,7 @@ ul.songs-play-list {
 
 .details-content {
   border-radius: 2px;
-  background-color: white;
+  background-color: $white;
   box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.09);
   margin: 9px;
   h4 {

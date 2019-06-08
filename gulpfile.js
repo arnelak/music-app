@@ -2,8 +2,15 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var babel = require("gulp-babel");
 
 sass.compiler = require('node-sass');
+
+gulp.task("default", function () {
+  return gulp.src("src/scripts/index.js")
+      .pipe(babel())
+      .pipe(gulp.dest("dist"));
+});
 
 gulp.task('sass', function () {
   return gulp.src('./src/styles/scss/**/*.scss')

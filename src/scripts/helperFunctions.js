@@ -14,3 +14,16 @@ function getSongObjectByID (id) {
   const song = songs.find((item) => item.id === id);
   return song;
 }
+
+function getAlbumObjectByID (id) {
+    id = parseInt(id);
+    const album = albums.find((item) => item.id === id);
+    return album;
+}
+
+function getSongsFromAlbumByID (id) {
+    id = parseInt(id);
+    const songsFromAlbum = songs.filter((item) => item.albumID === id);
+    return songsFromAlbum;
+}
+

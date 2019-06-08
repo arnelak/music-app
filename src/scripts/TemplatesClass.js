@@ -40,14 +40,18 @@ class TemplatesClass {
       ${this.renderSongsList()}
       `);
     return template();
-  }
+  };
 
   getAlbumsPage = (id) => {
+    const album = getAlbumObjectByID(id);
+    const songs = getSongsFromAlbumByID(id);
+
     const template = Handlebars.compile(`
       album
+      ${ this.renderSongsList(songs) }
       `);
     return template();
-  }
+  };
 
   renderAlbums = () => {
     const template = Handlebars.compile(`
@@ -73,10 +77,12 @@ class TemplatesClass {
     return template();
   };
 
-  renderSongsList = () => {
+  renderSongsList = (filteredSongs) => {
+    const songList = filteredSongs ? filteredSongs : songs;
+
     const template = Handlebars.compile(`
       <ul class="songs-play-list">
-        ${ songs.map((item) => {
+        ${ songList.map((item) => {
           return this.renderSingleSong(item);
         }).join('') }
       </ul>

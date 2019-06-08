@@ -1,6 +1,7 @@
 const songs = [
   {
     "id": 1,
+    "albumID": 3,
     "title": "Song Title",
     "artist": "Artist Name",
     "src": "../../assets/song-1.mp3",
@@ -9,6 +10,7 @@ const songs = [
   },
   {
     "id": 2,
+    "albumID": 2,
     "title": "Song Title 2",
     "artist": "Artist Name 2",
     "src": "../../assets/song-2.mp3",
@@ -17,6 +19,7 @@ const songs = [
   },
   {
     "id": 3,
+    "albumID": 4,
     "title": "Song Title 3",
     "artist": "Artist Name 3",
     "src": "../../assets/song-3.mp3",
@@ -25,6 +28,7 @@ const songs = [
   },
   {
     "id": 4,
+    "albumID": 2,
     "title": "Eyesdown",
     "artist": "Bonobo",
     "src": "../../assets/song-4.mp3",
@@ -33,6 +37,7 @@ const songs = [
   },
   {
     "id": 5,
+    "albumID": 1,
     "title": "Near Dark",
     "artist": "Burial",
     "src": "../../assets/song-5.mp3",
@@ -41,6 +46,7 @@ const songs = [
   },
   {
     "id": 6,
+    "albumID": 3,
     "title": "Want U",
     "artist": "ZHU",
     "src": "../../assets/song-6.mp3",
@@ -49,6 +55,7 @@ const songs = [
   },
   {
     "id": 7,
+    "albumID": 2,
     "title": "7 Rings",
     "artist": "Ariana Grande",
     "src": "../../assets/song-7.mp3",

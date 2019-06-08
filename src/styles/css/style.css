@@ -2,7 +2,8 @@
   font-family: 'Roboto', sans-serif; }
 
 .logo {
-  border-bottom: 1px solid #69696924; }
+  border-bottom: 1px solid #69696924;
+  background-color: #ffffff; }
   .logo a {
     font-size: 19px;
     padding: 17px;
@@ -31,7 +32,7 @@ body {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.32);
   margin: 0px; }
 
@@ -80,7 +81,7 @@ body {
         .container #sidebar ul li:hover {
           background-color: #E91E63; }
           .container #sidebar ul li:hover i, .container #sidebar ul li:hover a, .container #sidebar ul li:hover span {
-            color: white; }
+            color: #ffffff; }
 
 .main {
   width: 100%;
@@ -92,6 +93,7 @@ body {
   padding-left: 40px;
   display: flex;
   border-bottom: 1px solid #69696924;
+  background-color: #ffffff;
   position: relative; }
   .header i {
     margin-top: 23px;
@@ -189,7 +191,8 @@ h3 {
     user-select: none; }
 
 ul.songs-play-list {
-  padding-left: 20px; }
+  padding-left: 20px;
+  width: calc(100vw - 230px); }
   ul.songs-play-list li {
     height: 35px;
     position: relative;
@@ -199,12 +202,12 @@ ul.songs-play-list {
       border-radius: 3px;
       box-shadow: 1px -1px 20px 1px rgba(34, 25, 25, 0.09); }
     ul.songs-play-list li:nth-child(even) {
-      background-color: white; }
+      background-color: #ffffff; }
     ul.songs-play-list li > div {
       margin-left: auto; }
   ul.songs-play-list i {
     color: #E91E63 !important;
-    font-size: 20px;
+    font-size: 14px;
     margin-right: 10px;
     margin-left: -5px; }
     ul.songs-play-list i:hover {
@@ -240,7 +243,7 @@ ul.songs-play-list {
   margin-right: 10px;
   margin-left: 20px;
   border: none;
-  background-color: white;
+  background-color: #ffffff;
   color: #E91E63;
   padding: 0;
   font-size: 27px;
@@ -273,7 +276,7 @@ ul.songs-play-list {
 
 .details-content {
   border-radius: 2px;
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 0px 3px 10px rgba(34, 25, 25, 0.09);
   margin: 9px; }
   .details-content h4 {
